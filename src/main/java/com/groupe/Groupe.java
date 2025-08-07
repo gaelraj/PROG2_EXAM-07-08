@@ -67,10 +67,18 @@ public class Groupe {
         }
     }
 
-    public String searchPost (String keyword) {
+    public void searchPost (String keyword) {
         for (Posts post : postList) {
             if(post.getContent().toLowerCase().contains(keyword.toLowerCase())) {
-                return post;
+                System.out.println(post);
+            }
+        }
+    }
+
+    public void searchUser (User user) {
+        for (User u : userList) {
+            if(u.getId() == user.getId() || u.getUserName() == user.getUserName()){
+                System.out.println("User found");
             }
         }
     }
@@ -78,9 +86,9 @@ public class Groupe {
     public static void main(String[] args) {
         Groupe groupe = new Groupe("groupe");
         User user1 = new User("a","Gael","email@gmail.com");
-        Posts posts = new Posts(groupe,"postako",user1);
+        Posts posts = new Posts("postako",user1);
         groupe.createPost(posts);
-        System.out.println(groupe.postList.toString());
+        groupe.searchPost("ako");
 
 
     }

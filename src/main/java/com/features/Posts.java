@@ -36,6 +36,6 @@ public class Posts {
     }
 
     public String toString() {
-        return content;
+        return content+ " " + author;
     }
 }
