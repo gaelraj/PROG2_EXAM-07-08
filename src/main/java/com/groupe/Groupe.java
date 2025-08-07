@@ -67,7 +67,7 @@ public class Groupe {
         }
     }
 
-    public Posts searchPost (String keyword) {
+    public String searchPost (String keyword) {
         for (Posts post : postList) {
             if(post.getContent().toLowerCase().contains(keyword.toLowerCase())) {
                 return post;

@@ -8,13 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Posts {
-    private Groupe groupe;
     private String content;
     private User author;
     private List<Comment> comments;
 
-    public Posts(Groupe groupe, String content, User author) {
-        this.groupe = groupe;
+    public Posts(String content, User author) {
         this.content = content;
         this.author = author;
         this.comments = new ArrayList<>();
@@ -35,5 +33,9 @@ public class Posts {
 
     public void deleteComment(Comment comment) {
         comments.remove(comment);
+    }
+
+    public String toString() {
+        return content;
     }
 }
